@@ -1,0 +1,6 @@
+
+person:
+  name: test张三
+
+server:
+  port: 6000

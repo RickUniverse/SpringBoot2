@@ -1,0 +1,21 @@
+
+# 配置静态资源路径，该配置会影响欢迎页和favicon
+spring:
+  mvc:
+    # static-path-pattern ： 访问所有的静态资源都需要加上/res 前缀，做权限控制时比较方便
+    static-path-pattern: /res/**
+    hiddenmethod:
+      filter:
+        # 默认时false，需要手动开启Rest风格的url，表单提交使用Rest风格
+        # 选择性配置，因为前后端分离，例如Postman直接可以就发PUT和DELETE请求
+        enabled: true
+    contentnegotiation:
+      # 开启基于请求头的内容协商， 可以使用请求头参数  ?format=json
+      # 例如：http://localhost:8080/testFormat?format=xml
+      # 支支持：xml 和 json
+      favor-parameter: true
+
+# 修改默认的静态资源映射
+#  resources:
+#    static-locations: [classpath:/updatedefault/]
+
